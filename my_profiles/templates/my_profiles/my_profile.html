@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">My Profile</li>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+      <div class="col my-5">
+        <img src="/media/{{ form.img.value }}" class="rounded img-raised" style="width:200px"/>
+      </div>
+
+      <form method="post" novalidate enctype='multipart/form-data'>
+        {% csrf_token %}
+        {% include 'my_profiles/includes/form-profile.html' %}
+        <button type="submit" class="btn btn-success">Save changes</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
