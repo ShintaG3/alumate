@@ -1,0 +1,98 @@
+{% load static %}
+
+<!-- Demo styles -->
+<style>
+  #swp-1.swiper-container  {
+     width: 480px;
+     height: 100%;
+   }
+  #swp-1 .swiper-slide {
+    height: 450px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+</style>
+
+<!-- Swiper -->
+<div class="swiper-container" id="swp-1">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"">
+      <div class="card text-center" style="width: 20rem;">
+        <div class="card-body pt-15">
+          <img style="max-width:100px;" src="{% static 'img/eva.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+          <h4 class="title mt-0">Eva Jenner</h4>
+          <p class="category text-primary">Applicant</p>
+          <p class="description">{{ "You can write here details about one of your team members. You can give more details about what they do. Feel free to add some "|truncatewords:12 }}</p>
+          <a href="{% url 'home' %}" class="btn btn-primary">More</a>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="card text-center" style="width: 20rem;">
+        <div class="card-body pt-15">
+          <img style="max-width:100px;"src="{% static 'img/avatar.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+          <h4 class="title mt-0">Romina Hadid</h4>
+          <p class="category text-primary">Current Student</p>
+          <p class="description">{{ "You can write here details about one of your team members. You can give more details about what they do. Feel free to add some"|truncatewords:12 }}</p>
+          <a href="{% url 'home' %}" class="btn btn-primary">More</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="swiper-slide">
+      <div class="card text-center" style="width: 20rem;">
+        <div class="card-body pt-15">
+          <img style="max-width:100px;" src="{% static 'img/ryan.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+          <h4 class="title mt-0">Ryan Tompson</h4>
+          <p class="category text-primary">Alumni</p>
+          <p class="description">{{ "You can write here details about one of your team members. You can give more details about what they do. Feel free to add some "|truncatewords:12 }}</p>
+          <a href="{% url 'home' %}" class="btn btn-primary">More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Add Arrows -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('#swp-1', {
+    // effect: 'flip',
+    grabCursor: true,
+    loop: true,
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+       delay: 2500,
+       disableOnInteraction: false,
+    },
+  });
+</script>

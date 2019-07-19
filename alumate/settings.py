@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     'boards',
     'accounts',
     'auths',
+    'my_universities',
+    'my_profiles',
+    'universities',
+    'charts',
 ]
 
 MIDDLEWARE = [
