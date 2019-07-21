@@ -1,0 +1,81 @@
+{% if form.non_field_errors %}
+  <div class="alert alert-danger" role="alert">
+    {% for error in form.non_field_errors %}
+      <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="form-group">
+    {{ form.uni_name.label_tag }}
+    {{ form.uni_name }}
+    <ul class="list-group" id="result"></ul>
+    <div class="invalid-feedback">
+      {{ form.uni_name.error }}
+    </div>
+    {% if form.uni_name.help_text %}
+      <small class="form-text text-muted">
+        {{ form.uni_name.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
+<div class="form-group">
+    {{ form.degree.label_tag }}
+    {{ form.degree }}
+    <div class="invalid-feedback">
+      {{ form.degree.error }}
+    </div>
+    {% if form.degree.help_text %}
+      <small class="form-text text-muted">
+        {{ form.degree.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
+<div class="form-group">
+    {{ form.fiedl_of_study.label_tag }}
+    {{ form.fiedl_of_study }}
+    <div class="invalid-feedback">
+      {{ form.fiedl_of_study.error }}
+    </div>
+    {% if form.fiedl_of_study.help_text %}
+      <small class="form-text text-muted">
+        {{ form.fiedl_of_study.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
+<div class="form-group">
+    {{ form.st_year.label_tag }}
+    {{ form.st_year }}
+    <div class="invalid-feedback">
+      {{ form.st_year.error }}
+    </div>
+    {% if form.st_year.help_text %}
+      <small class="form-text text-muted">
+        {{ form.st_year.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
+<div class="form-group">
+    {{ form.en_year.label_tag }}
+    {{ form.en_year }}
+    <div class="invalid-feedback">
+      {{ form.en_year.error }}
+    </div>
+    {% if form.en_year.help_text %}
+      <small class="form-text text-muted">
+        {{ form.en_year.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
+<div class="form-group">
+    {{ form.grade.label_tag }}
+    {{ form.grade }}
+    <div class="invalid-feedback">
+      {{ form.grade.error }}
+    </div>
+    {% if form.grade.help_text %}
+      <small class="form-text text-muted">
+        {{ form.grade.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
