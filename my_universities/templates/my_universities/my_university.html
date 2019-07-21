@@ -2,6 +2,24 @@
 
 {% block title %}My University{% endblock %}
 
+{% block stylesheet %}
+  <style media="screen">
+    #result {
+      position:absolute;
+      width: 100%;
+      max-width:870px;
+      cursor: pointer;
+      overflow-y: autho;
+      max-height: 400px;
+      box-sizing: border-box;
+      z-index: 1001;
+    }
+    .link-class:hover{
+      background-color:#f1f1f1;
+    }
+  </style>
+{% endblock %}
+
 {% block breadcrumb %}
   <li class="breadcrumb-item active">My University</li>
 {% endblock %}
@@ -11,11 +29,42 @@
     <div class="col-lg-6 col-md-8 col-sm-10">
       <form method="post" novalidate>
         {% csrf_token %}
-        {% include 'my_universities/includes/form.html' %}
+        {% include 'my_universities/includes/form-uni.html' %}
         <button type="submit" class="btn btn-success">Save changes</button>
       </form>
     </div>
   </div>
+{% endblock %}
 
 
+
+{% block javascript %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.1.0/jquery-migrate.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#uni_name').keyup(function(){
+      var searchField = $('#uni_name').val();
+      var expression = new RegExp(searchField, "i");
+      $('#result').html('');
+      $.getJSON('/static/json/universities.json', function(data){
+        $.each(data, function(key, value){
+          if(value.university.search(expression) != -1 || value.location.search(expression) != -1){
+              $('#result').append('<li class="list-group-item"><img src=" '+value.image+' " height="40" width="40" class="img-thumbnail"/>'+value.university+'</li>');
+              $('#result li').click(function(){
+                var university = $(this).text();
+                $('#uni_name').val(university);
+          
+                $('#result').html('');
+
+              });
+          }
+        });
+      })
+    });
+  });
+</script>
 {% endblock %}
