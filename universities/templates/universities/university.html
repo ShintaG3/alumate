@@ -104,32 +104,35 @@
   <div class="wrapper">
     <div class="page-header clear-filter page-header-small" filter-color="orange">
       <div class="page-header-image" data-parallax="true" style="background-image:url('{% static 'img/uni6.jpg' %}');">
+        <!-- {% static 'img/uni6.jpg' %} -->
       </div>
       <div class="container">
 
-        <h1 class="title">University of Reading</h1>
+        <h1 class="title">{{ myuni }}</h1>
+
 
         <div class="container my-0 mx-auto">
-          <img class="rounded img-raised" src="{% static 'img/flag_uk.png' %}" alt="uk">
+          <img class="rounded img-raised" src="{{ uni_image }}" alt="uk">
+          <!-- {% static 'img/flag_uk.png' %} -->
         </div>
 
         <div class="content mb-3">
           <div class="social-description">
             <!-- <h2 class="count" data-from="0" data-to="26" href="javascript:toggle();">0</h2> -->
-            <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="26" href="javascript:toggle();">0</a>
+            <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="26" href="javascript:toggle_apl();">0</a>
 
             <p>Applicants</p>
 
           </div>
           <div class="social-description">
 
-            <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="26" href="javascript:toggle();">0</a>
+            <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="26" href="javascript:toggle_crt();">0</a>
 
             <p>Current Students</p>
           </div>
           <div class="social-description">
 
-            <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="48" href="javascript:toggle();">0</a>
+            <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="48" href="javascript:toggle_alm();">0</a>
 
             <p>Alumni</p>
           </div>
@@ -138,8 +141,14 @@
     </div>
 
 
-    <div class="toggle-box">
-      {% include "universities/includes/swiper.html" %}
+    <div class="toggle-box-apl">
+      {% include "universities/includes/swiper.html" with qs=qs_apl %}
+    </div>
+    <div class="toggle-box-crt">
+      {% include "universities/includes/swiper.html" with qs=qs_crt %}
+    </div>
+    <div class="toggle-box-alm">
+      {% include "universities/includes/swiper.html" with qs=qs_alm %}
     </div>
 
     <style type="text/css">
@@ -153,9 +162,34 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-    function toggle() {
-      $('.toggle-box').slideToggle('slow');
+    function toggle_apl() {
+      if ($('.toggle-box-crt').is(":visible")){
+        $('.toggle-box-crt').hide('slow');
+      }
+      if ($('.toggle-box-alm').is(":visible")){
+        $('.toggle-box-alm').hide('slow');
+      }
+      $('.toggle-box-apl').slideToggle('slow');
     }
+    function toggle_crt() {
+      if ($('.toggle-box-apl').is(":visible")){
+        $('.toggle-box-apl').hide('slow');
+      }
+      if ($('.toggle-box-alm').is(":visible")){
+        $('.toggle-box-alm').hide('slow');
+      }
+      $('.toggle-box-crt').slideToggle('slow');
+    }
+    function toggle_alm() {
+      if ($('.toggle-box-crt').is(":visible")){
+        $('.toggle-box-crt').hide('slow');
+      }
+      if ($('.toggle-box-apl').is(":visible")){
+        $('.toggle-box-apl').hide('slow');
+      }
+      $('.toggle-box-alm').slideToggle('slow');
+    }
+
     </script>
 
     <div class="section">

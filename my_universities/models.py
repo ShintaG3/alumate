@@ -20,7 +20,7 @@ ENROLLMENT_STATUS = (
 )
 
 class MyUniversity(models.Model):
-    user                = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+    user                = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name="university")
     country             = models.CharField(max_length=256, null=True, blank=True)
     uni_name            = models.CharField(max_length=256, null=True, blank=True)
     degree              = models.CharField(max_length=256, null=True, blank=True)
@@ -36,7 +36,7 @@ class MyUniversity(models.Model):
     enr_status          = models.CharField(max_length=64, choices=ENROLLMENT_STATUS)
 
     def __str__(self):
-        return f"{self.id} {str(self.user)} {self.school}"
+        return f"{self.id} {str(self.user)} {self.uni_name}"
 
 def pre_save_userprofile_receiver(sender, instance, *args, **kwargs):
     en_year = instance.en_year

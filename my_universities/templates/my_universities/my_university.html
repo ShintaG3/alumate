@@ -46,8 +46,8 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#uni_name').keyup(function(){
-      var searchField = $('#uni_name').val();
+    $('#id_uni_name').keyup(function(){
+      var searchField = $('#id_uni_name').val();
       var expression = new RegExp(searchField, "i");
       $('#result').html('');
       $.getJSON('/static/json/universities.json', function(data){
@@ -56,8 +56,8 @@
               $('#result').append('<li class="list-group-item"><img src=" '+value.image+' " height="40" width="40" class="img-thumbnail"/>'+value.university+'</li>');
               $('#result li').click(function(){
                 var university = $(this).text();
-                $('#uni_name').val(university);
-          
+                $('#id_uni_name').val(university);
+
                 $('#result').html('');
 
               });

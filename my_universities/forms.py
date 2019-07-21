@@ -18,7 +18,7 @@ class MyUniversityForm(forms.ModelForm):
                                 attrs={
                                     # 'placeholder': '',
                                     'name': 'en_year',
-                                    'id': 'en_year',
+                                    'id': 'id_en_year',
                                     'class':'form-control',
                                 }
                             )
@@ -30,7 +30,7 @@ class MyUniversityForm(forms.ModelForm):
                                 attrs={
                                     # 'placeholder': '',
                                     'name': 'en_year',
-                                    'id': 'en_year',
+                                    'id': 'id_en_year',
                                     'class':'form-control',
                                 }
                             )
@@ -40,7 +40,7 @@ class MyUniversityForm(forms.ModelForm):
                                     attrs={
                                         'placeholder': 'Ex: Boston University',
                                         'name': 'uni_name',
-                                        'id': 'uni_name',
+                                        'id': 'id_uni_name',
                                         'class':'form-control'
                                     }
                                 )
@@ -59,7 +59,7 @@ class MyUniversityForm(forms.ModelForm):
                                         'placeholder': 'Business',
                                         'class':'form-control',
                                         'name':'field_of_study',
-                                        'id': 'field_of_study',
+                                        'id': 'id_field_of_study',
                                     }
                                 )
                             )
@@ -68,7 +68,7 @@ class MyUniversityForm(forms.ModelForm):
                                         'placeholder': 'Disticntion',
                                         'class':'form-control',
                                         'name':'grade',
-                                        'id': 'grade',
+                                        'id': 'id_grade',
                                     }
                                 )
                             )
@@ -76,6 +76,6 @@ class MyUniversityForm(forms.ModelForm):
         model = MyUniversity
         fields =('uni_name', 'degree', 'field_of_study', 'st_year','en_year','grade')
         labels = {
-            'uni_name':_('University'),
+            # 'uni_name':_('University'),
             'enr_status':_('Enrollment Status'),
         }

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
@@ -16,3 +16,10 @@ class MyProfileUpdateView(UpdateView):
     def get_object(self):
         object,created = MyProfile.objects.get_or_create(id=self.request.user.id)
         return object
+
+    def form_valid(self, form):
+        profile = form.save(commit=False)
+        profile.user = self.request.user
+        profile.id = self.request.user.id
+        profile.save()
+        return redirect('my_profile')
