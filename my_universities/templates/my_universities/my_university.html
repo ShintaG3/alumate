@@ -54,13 +54,17 @@
         $.each(data, function(key, value){
           if(value.university.search(expression) != -1 || value.location.search(expression) != -1){
               $('#result').append('<li class="list-group-item"><img src=" '+value.image+' " height="40" width="40" class="img-thumbnail"/>'+value.university+'</li>');
-              $('#result li').click(function(){
-                var university = $(this).text();
-                $('#id_uni_name').val(university);
-
-                $('#result').html('');
-
+              $(document).on('click',function(e) {
+                 if(!$(e.target).closest('#result li').length) {
+                   $('#result').html('');
+                 } else {
+                   var university = $(e.target).text();
+                   $('#id_uni_name').val(university);
+                   $('#id_country').val(value.country);
+                   $('#result').html('');
+                 }
               });
+
           }
         });
       })

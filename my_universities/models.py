@@ -28,11 +28,11 @@ class MyUniversity(models.Model):
     st_year             = models.IntegerField(_('year'), null=True, blank=True, validators=[MinValueValidator(1970), max_value_current_year],default=current_year)
     en_year             = models.IntegerField(_('en_year'), null=True, blank=True, validators=[MinValueValidator(1970), max_value_current_year],default=current_year)
     grade               = models.CharField(max_length=256, null=True, blank=True)
-    grade_rate          = models.IntegerField(default=60, null=True, blank=True)
+    # grade_rate          = models.IntegerField(default=60, null=True, blank=True)
     # foundation_body     = models.CharField(max_length=256, null=True, blank=True)
     # foundation_payback  = models.BooleanField(default=True)
     # foundation_amount   = models.CharField(max_length=256, null=True, blank=True)
-    description         = models.CharField(max_length=1000, null=True, blank=True)
+    # description         = models.CharField(max_length=1000, null=True, blank=True)
     enr_status          = models.CharField(max_length=64, choices=ENROLLMENT_STATUS)
 
     def __str__(self):

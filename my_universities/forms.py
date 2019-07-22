@@ -54,6 +54,15 @@ class MyUniversityForm(forms.ModelForm):
                                     }
                                 )
                             )
+    country          = forms.CharField(label='Country', widget=forms.TextInput(
+                                    attrs={
+                                        'placeholder': "United States",
+                                        'class':'form-control',
+                                        'name':'country',
+                                        'id': 'id_country',
+                                    }
+                                )
+                            )
     field_of_study  = forms.CharField(label='Field of stud', widget=forms.TextInput(
                                     attrs={
                                         'placeholder': 'Business',
@@ -74,8 +83,4 @@ class MyUniversityForm(forms.ModelForm):
                             )
     class Meta:
         model = MyUniversity
-        fields =('uni_name', 'degree', 'field_of_study', 'st_year','en_year','grade')
-        labels = {
-            # 'uni_name':_('University'),
-            'enr_status':_('Enrollment Status'),
-        }
+        fields =('country', 'uni_name', 'degree', 'field_of_study', 'st_year','en_year', 'grade')

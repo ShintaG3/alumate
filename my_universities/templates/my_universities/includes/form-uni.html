@@ -7,6 +7,19 @@
 {% endif %}
 
 <div class="form-group">
+    {{ form.country.label_tag }}
+    {{ form.country }}
+    <ul class="list-group" id="result"></ul>
+    <div class="invalid-feedback">
+      {{ form.country.error }}
+    </div>
+    {% if form.country.help_text %}
+      <small class="form-text text-muted">
+        {{ form.country.help_text|safe }}
+      </small>
+    {% endif %}
+</div>
+<div class="form-group">
     {{ form.uni_name.label_tag }}
     {{ form.uni_name }}
     <ul class="list-group" id="result"></ul>
@@ -32,14 +45,14 @@
     {% endif %}
 </div>
 <div class="form-group">
-    {{ form.fiedl_of_study.label_tag }}
-    {{ form.fiedl_of_study }}
+    {{ form.field_of_study.label_tag }}
+    {{ form.field_of_study }}
     <div class="invalid-feedback">
-      {{ form.fiedl_of_study.error }}
+      {{ form.field_of_study.error }}
     </div>
-    {% if form.fiedl_of_study.help_text %}
+    {% if form.field_of_study.help_text %}
       <small class="form-text text-muted">
-        {{ form.fiedl_of_study.help_text|safe }}
+        {{ form.field_of_study.help_text|safe }}
       </small>
     {% endif %}
 </div>

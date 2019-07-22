@@ -18,12 +18,13 @@ class MyUniversityUpdateView(UpdateView):
         object,created = MyUniversity.objects.get_or_create(id=self.request.user.id)
         return object
 
-    # def form_valid(self, form):
-    #     university = form.save(commit=False)
-    #     university.user = self.request.user
-    #     university.id = self.request.user.id
-    #     university.save()
-    #     return redirect('my_university')
+    def form_valid(self, form):
+        university = form.save(commit=False)
+        print(university)
+        university.user = self.request.user
+        university.id = self.request.user.id
+        university.save()
+        return redirect('my_university')
 
 # @login_required
 # def MyUniversityUpdate(request):
