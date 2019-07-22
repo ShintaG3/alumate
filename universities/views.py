@@ -30,6 +30,9 @@ def University(request):
     qs_apl = MyUniversity.objects.filter(uni_name=myuni.uni_name, enr_status="applicant")
     qs_crt = MyUniversity.objects.filter(uni_name=myuni.uni_name, enr_status="current student")
     qs_alm = MyUniversity.objects.filter(uni_name=myuni.uni_name, enr_status="alumni")
+    apl_count = qs_apl.count()
+    crt_count = qs_crt.count()
+    alm_count = qs_alm.count()
     # p_set = MyProfile.objects.all().filter(user=uni_set.user)
     # p_set = u_set.university.filter(uni_name=myuni)
     # myprof = user.profile.all().first()
@@ -44,5 +47,8 @@ def University(request):
         'qs_apl':qs_apl,
         'qs_crt':qs_crt,
         'qs_alm':qs_alm,
+        'apl_count':apl_count,
+        'crt_count':crt_count,
+        'alm_count':alm_count,
     }
     return render(request, 'universities/university.html', context)

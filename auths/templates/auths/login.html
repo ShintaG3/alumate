@@ -1,6 +1,6 @@
 {% extends 'base_accounts.html' %}
 
-{% block title %}Log in to Django Boards{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
   <div class="row justify-content-center">
@@ -15,14 +15,14 @@
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
           </form>
         </div>
-        <div class="card-footer text-muted text-center">
-          New to Django Boards? <a href="{% url 'signup' %}">Sign up</a>
+        <div class="card-footer text-muted text-center mb-3">
+          New to Alumate? <a href="{% url 'signup' %}">Sign up</a>
         </div>
-      </div>
-      <div class="text-center py-2">
-        <small>
-          <a href="{% url 'password_reset' %}" class="text-muted">Forgot your password?</a>
-        </small>
+        <!-- <div class="text-center py-2">
+          <small>
+            <a href="{% url 'password_reset' %}" class="text-muted">Forgot your password?</a>
+          </small>
+        </div> -->
       </div>
     </div>
   </div>
