@@ -1,52 +1,57 @@
 {% load static %}
 <!-- Swiper -->
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    {% for uni in qs %}
+{% if qs %}
 
 
-    <div class="swiper-slide" style="background-image:url({{ uni.user.profile.first.img.url }})"></div>
-    <!-- <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/4)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
-    <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div> -->
-    {% endfor %}
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      {% for uni in qs %}
+      <div class="swiper-slide" style="background-image:url({{ uni.user.profile.first.img.url }})"></div>
+      <!-- <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/4)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div>
+      <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div> -->
+      {% endfor %}
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
-</div>
 
-<!-- Swiper JS -->
-<script src="{% static 'js/swiper.min.js' %}"></script>
+  <!-- Swiper JS -->
+  <script src="{% static 'js/swiper.min.js' %}"></script>
 
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    effect: 'coverflow',
-    // direction: 'vertical',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    loop: true,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows : true,
-    },
-    autoplay: {
-       delay: 2500,
-       disableOnInteraction: false,
-     },
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  });
-</script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      // direction: 'vertical',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      autoplay: {
+         delay: 2500,
+         disableOnInteraction: false,
+       },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+{% else %}
+  <h4 class="description">Invite friends?</h4>
+{% endif %}

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('api/', views.BordAPI.as_view()),
+    # path('api/', views.BordAPI.as_view()),
     # ---original---
     path('', views.BoardListView.as_view(), name='home'),
     path('boards/<pk>/', views.TopicListView.as_view(), name='board_topics'),

@@ -17,16 +17,16 @@ from .forms import NewBoardForm, NewTopicForm, PostForm
 
 
 
-class BordAPI(APIView):
-    authentication_classes = []
-    permission_classes = []
-
-    def get(self, request, format=None):
-        data = {
-            "mamachan":"Amy",
-            "manta":"Shinta",
-        }
-        return Response(data)
+# class BordAPI(APIView):
+#     authentication_classes = []
+#     permission_classes = []
+#
+#     def get(self, request, format=None):
+#         data = {
+#             "mamachan":"Amy",
+#             "manta":"Shinta",
+#         }
+#         return Response(data)
 
 
 # ---original---

@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+import json
+
 from my_universities.models import MyUniversity
 from my_profiles.models import MyProfile
 from django.contrib.auth.models import User
-import json
+from boards.models import Post
 
 f = open('static/json/uni_js.json','r')
 ud = json.load(f)
@@ -33,6 +35,7 @@ def University(request):
     apl_count = qs_apl.count()
     crt_count = qs_crt.count()
     alm_count = qs_alm.count()
+    posts = Post.objects.all()
     # p_set = MyProfile.objects.all().filter(user=uni_set.user)
     # p_set = u_set.university.filter(uni_name=myuni)
     # myprof = user.profile.all().first()
@@ -50,5 +53,6 @@ def University(request):
         'apl_count':apl_count,
         'crt_count':crt_count,
         'alm_count':alm_count,
+        'posts':posts,
     }
     return render(request, 'universities/university.html', context)

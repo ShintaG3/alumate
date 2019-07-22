@@ -30,18 +30,22 @@
 <!-- Swiper -->
 <div class="swiper-container" id="swp-1">
   <div class="swiper-wrapper">
+    {% for post in posts %}
+
     <div class="swiper-slide"">
       <div class="card text-center" style="width: 20rem;">
         <div class="card-body pt-15">
-          <img style="max-width:100px;" src="{% static 'img/eva.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-          <h4 class="title mt-0">Eva Jenner</h4>
-          <p class="category text-primary">Applicant</p>
-          <p class="description">{{ "You can write here details about one of your team members. You can give more details about what they do. Feel free to add some "|truncatewords:12 }}</p>
-          <a href="{% url 'home' %}" class="btn btn-primary">More</a>
+          <img style="max-width:100px;" src="{{ post.created_by.profile.first.img.url }}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+          <h4 class="title mt-0">{{ post.created_by }}</h4>
+          <p class="category text-primary">{{ post.created_by.university.first.enr_status }}</p>
+          <p class="description">{{ post.get_message_as_markdown |truncatewords:12 }}</p>
+          <a href="{% url 'topic_posts' post.topic.board.pk post.topic.pk %}" class="btn btn-primary">More</a>
         </div>
       </div>
     </div>
-    <div class="swiper-slide">
+    {% endfor %}
+
+    <!-- <div class="swiper-slide">
       <div class="card text-center" style="width: 20rem;">
         <div class="card-body pt-15">
           <img style="max-width:100px;"src="{% static 'img/avatar.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
@@ -64,7 +68,7 @@
           <a href="{% url 'home' %}" class="btn btn-primary">More</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
