@@ -138,7 +138,7 @@ STATIC_URL = '/static/'                                             #local setti
 STATICFILES_DIRS = [                                                #local settings
         os.path.join(BASE_DIR, 'static'),
     ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #Deploy settings Staticfile storage to Heroku via whitenoise
 
 #--Media file configuration --
