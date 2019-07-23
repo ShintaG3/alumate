@@ -118,18 +118,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
@@ -145,11 +133,25 @@ if not DEBUG:
     import django_heroku
     django_heroku.settings(locals())
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+#--staticfile configuration--
+STATIC_URL = '/static/'                                             #local settings
+STATICFILES_DIRS = [                                                #local settings
+        os.path.join(BASE_DIR, 'static'),
+    ]
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #Deploy settings Staticfile storage to Heroku via whitenoise
 
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-AWS_BUCKET_ACL =None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#--Media file configuration --
+MEDIA_URL = '/media/'                                                #local settings
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')   #local settings
+
+#--AWS configuration--
+    #AWS IMA
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+#     #AWS S3 bucket
+# AWS_STORAGE_BUCKET_NAME = 'django-alumate-files'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# AWS_BUCKET_ACL =None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   #mediafile storage to AWS S3
