@@ -9,9 +9,11 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-6 col-md-8 col-sm-10">
-      <div class="col my-5">
-        <img src="{{ profile.img.url }}" class="rounded img-raised" style="width:200px"/>
-      </div>
+      {% if profile.img %}
+        <div class="col my-5">
+          <img src="{{ profile.img.url }}" class="rounded img-raised" style="width:200px"/>
+        </div>
+      {% endif %}
 
       <form method="post" novalidate enctype='multipart/form-data'>
         {% csrf_token %}
