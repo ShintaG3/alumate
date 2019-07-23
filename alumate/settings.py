@@ -122,16 +122,6 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-DEBUG = False
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
 
 #--staticfile configuration--
 STATIC_URL = '/static/'                                             #local settings
@@ -155,3 +145,14 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')   #local sett
 # AWS_DEFAULT_ACL = None
 # AWS_BUCKET_ACL =None
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'   #mediafile storage to AWS S3
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+    if not DEBUG:
+        import django_heroku
+        django_heroku.settings(locals())
