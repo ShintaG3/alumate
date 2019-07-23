@@ -26,12 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
     'rest_framework',
     'widget_tweaks',
-
-
-
     'boards',
     'accounts',
     'auths',
@@ -133,7 +129,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 #--Media file configuration --
 MEDIA_URL = '/media/'                                                #local settings
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_root')   #local settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')   #local settings
 
 #--AWS configuration--
     #AWS IMA
