@@ -10,6 +10,7 @@ from .models import MyProfile
 class MyProfileUpdateView(UpdateView):
     model = MyProfile
     form_class = MyProfileForm
+    context_object_name = 'profile'
     template_name = 'my_profiles/my_profile.html'
     success_url = reverse_lazy('my_profile')
 
