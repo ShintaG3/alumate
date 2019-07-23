@@ -45,30 +45,6 @@
     </div>
     {% endfor %}
 
-    <!-- <div class="swiper-slide">
-      <div class="card text-center" style="width: 20rem;">
-        <div class="card-body pt-15">
-          <img style="max-width:100px;"src="{% static 'img/avatar.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-          <h4 class="title mt-0">Romina Hadid</h4>
-          <p class="category text-primary">Current Student</p>
-          <p class="description">{{ "You can write here details about one of your team members. You can give more details about what they do. Feel free to add some"|truncatewords:12 }}</p>
-          <a href="{% url 'home' %}" class="btn btn-primary">More</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="swiper-slide">
-      <div class="card text-center" style="width: 20rem;">
-        <div class="card-body pt-15">
-          <img style="max-width:100px;" src="{% static 'img/ryan.jpg' %}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-          <h4 class="title mt-0">Ryan Tompson</h4>
-          <p class="category text-primary">Alumni</p>
-          <p class="description">{{ "You can write here details about one of your team members. You can give more details about what they do. Feel free to add some "|truncatewords:12 }}</p>
-          <a href="{% url 'home' %}" class="btn btn-primary">More</a>
-        </div>
-      </div>
-    </div> -->
 
   </div>
 
@@ -84,12 +60,9 @@
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper('#swp-1', {
-    // effect: 'flip',
     grabCursor: true,
     loop: true,
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
+
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

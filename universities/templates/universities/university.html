@@ -21,7 +21,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
+
   <title>
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -36,7 +36,7 @@
   <div class="wrapper">
     <div class="page-header clear-filter page-header-small" filter-color="orange">
       <div class="page-header-image" data-parallax="true" style="background-image:url('{% static 'img/uni6.jpg' %}');">
-        <!-- {% static 'img/uni6.jpg' %} -->
+
       </div>
       <div class="container">
 
@@ -45,12 +45,12 @@
 
         <div class="container my-0 mx-auto">
           <img class="rounded img-raised" src="{{ uni_image }}" alt="uk">
-          <!-- {% static 'img/flag_uk.png' %} -->
+
         </div>
 
         <div class="content mb-3">
           <div class="social-description">
-            <!-- <h2 class="count" data-from="0" data-to="26" href="javascript:toggle();">0</h2> -->
+
             <a class="h2 count" style="color:#FFFFFF;" data-from="0" data-to="{{ apl_count }}" href="javascript:toggle_apl();">0</a>
 
             <p>Applicants</p>
@@ -128,19 +128,13 @@
       <div class="container">
         <div class="button-container">
           <a href="{% url 'home' %}" class="btn btn-primary btn-round btn-lg">Join!</a>
-          <!-- <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Follow me on Instagram">
-            <i class="fab fa-instagram"></i>
-          </a> -->
+
         </div>
 
         <h3 class="title">What is discussed?</h3>
 
         {% include "universities/includes/swiper_topic.html" %}
 
-        <!-- <h5 class="description">30% of current Students are staying at University Accommodation <br/>40% stays at share house <br/>The rest stays at personal houses.</h5> -->
 
 
       </div>
@@ -148,23 +142,7 @@
     <footer class="footer footer-default">
       <div class=" container ">
         <nav>
-          <!-- <ul>
-            <li>
-              <a href="https://www.creative-tim.com">
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a href="http://presentation.creative-tim.com">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="http://blog.creative-tim.com">
-                Blog
-              </a>
-            </li>
-          </ul> -->
+
         </nav>
         <div class="copyright" id="copyright">
           &copy;
