@@ -144,11 +144,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')   #local settings
 
 DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-    if not DEBUG:
-        import django_heroku
-        django_heroku.settings(locals())
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass
+#
+#     if not DEBUG:
+#         import django_heroku
+#         django_heroku.settings(locals())
