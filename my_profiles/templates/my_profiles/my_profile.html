@@ -13,6 +13,11 @@
         <div class="col my-5">
           <img src="{{ profile.img.url }}" class="rounded img-raised" style="width:200px"/>
         </div>
+      {% else %}
+        <div class="col my-5">
+          <h4>Upload image!</h4>
+        </div>
+
       {% endif %}
 
       <form method="post" novalidate enctype='multipart/form-data'>
