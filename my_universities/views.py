@@ -20,22 +20,7 @@ class MyUniversityUpdateView(UpdateView):
 
     def form_valid(self, form):
         university = form.save(commit=False)
-        print(university)
         university.user = self.request.user
         university.id = self.request.user.id
         university.save()
         return redirect('my_university')
-
-# @login_required
-# def MyUniversityUpdate(request):
-#     form = MyUniversityForm(request.POST or None)
-#     context = {
-#         "form": form
-#     }
-#     if form.is_valid():
-#         username = form_class.cleaned_data["username"]
-#         email = form_class.cleaned_data["email"]
-#         password = form_class.cleaned_data["password"]
-#         new_user = User.objects.create_user(username, email, password)
-#         print(new_user)
-#     return render(request, "accounts/register.html", context )

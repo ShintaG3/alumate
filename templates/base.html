@@ -11,6 +11,8 @@
       <div class="wrapper">
         {% include "base/navbar.html" %}
         <div class="container">
+        {% include "base/alert.html" %}
+
           <ol class="breadcrumb my-4">
             {% block breadcrumb %}
             {% endblock %}
@@ -25,5 +27,6 @@
 
     {% block javascript %}{% endblock %}
     {% include "base/js.html" %}
+  
   </body>
 </html>

@@ -1,0 +1,5 @@
+{% if not user.university.first.uni_name %}
+  <div class="alert alert-primary text-center" role="alert">
+    To activate univerity board, update <a href="{% url 'my_university' %}" class="alert-link">My University</a>!
+  </div>
+{% endif %}

@@ -13,7 +13,7 @@ def year_choices():
     return [(r,r) for r in range(1970, datetime.date.today().year+11)]
 
 class MyUniversityForm(forms.ModelForm):
-    st_year         = forms.TypedChoiceField(label='Start Year', coerce=int, choices=year_choices,
+    st_year         = forms.TypedChoiceField(required=False, label='Start Year', coerce=int, choices=year_choices,
                         initial=current_year, widget=forms.Select(
                                 attrs={
                                     # 'placeholder': '',
@@ -25,7 +25,7 @@ class MyUniversityForm(forms.ModelForm):
 
                         )
 
-    en_year         = forms.TypedChoiceField(label='End Year', coerce=int, choices=year_choices,
+    en_year         = forms.TypedChoiceField(required=False, label='End Year', coerce=int, choices=year_choices,
                         initial=current_year, widget=forms.Select(
                                 attrs={
                                     # 'placeholder': '',
@@ -36,7 +36,7 @@ class MyUniversityForm(forms.ModelForm):
                             )
 
                         )
-    uni_name        = forms.CharField(label='School', widget=forms.TextInput(
+    uni_name        = forms.CharField(required=False, label='School', widget=forms.TextInput(
                                     attrs={
                                         'placeholder': 'Ex: Boston University',
                                         'name': 'uni_name',
@@ -45,7 +45,7 @@ class MyUniversityForm(forms.ModelForm):
                                     }
                                 )
                             )
-    degree          = forms.CharField(label='Degree', widget=forms.TextInput(
+    degree          = forms.CharField(required=False, label='Degree', widget=forms.TextInput(
                                     attrs={
                                         'placeholder': "Ex: Master's",
                                         'class':'form-control',
@@ -54,7 +54,7 @@ class MyUniversityForm(forms.ModelForm):
                                     }
                                 )
                             )
-    country          = forms.CharField(label='Country', widget=forms.TextInput(
+    country          = forms.CharField(required=False, label='Country', widget=forms.TextInput(
                                     attrs={
                                         'placeholder': "United States",
                                         'class':'form-control',
@@ -63,7 +63,7 @@ class MyUniversityForm(forms.ModelForm):
                                     }
                                 )
                             )
-    field_of_study  = forms.CharField(label='Field of stud', widget=forms.TextInput(
+    field_of_study  = forms.CharField(required=False, label='Field of stud', widget=forms.TextInput(
                                     attrs={
                                         'placeholder': 'Business',
                                         'class':'form-control',
@@ -72,7 +72,7 @@ class MyUniversityForm(forms.ModelForm):
                                     }
                                 )
                             )
-    grade  = forms.CharField(label='Grade', widget=forms.TextInput(
+    grade  = forms.CharField(required=False, label='Grade', widget=forms.TextInput(
                                     attrs={
                                         'placeholder': 'Disticntion',
                                         'class':'form-control',

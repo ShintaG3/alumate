@@ -12,9 +12,16 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Country</a>
         </li>
-        <li class="nav-item">
+        {% if user.university.first.uni_name %}
+        <li class="nav-item" >
           <a class="nav-link" href="{% url 'university' %}">University</a>
         </li>
+        {% else %}
+        <li class="nav-item" >
+          <a class="nav-link disabled" id='dis_uni' href="{% url 'university' %}">University</a>
+        </li>
+        {% endif %}
+
         <li class="nav-item">
           <a class="nav-link" href="{% url 'home' %}">Boards</a>
         </li>
@@ -29,6 +36,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
               <a class="dropdown-item" href="{% url 'my_account' %}">My Account</a>
               <a class="dropdown-item" href="{% url 'my_profile' %}">My Profile</a>
+
               <a class="dropdown-item" href="{% url 'my_university' %}">My University</a>
 
               <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
@@ -45,4 +53,5 @@
       {% endif %}
     </div>
   </div>
+
 </nav>
