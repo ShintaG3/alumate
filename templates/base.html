@@ -6,27 +6,39 @@
     {% include "base/css.html" %}
     {% block stylesheet %}{% endblock %}
   </head>
-  <body>
-    {% block body %}
+  <!-- <body> -->
+  <body class="landing-page sidebar-collapse">
+
+    {% include "base/navbar.html" %}
       <div class="wrapper">
-        {% include "base/navbar.html" %}
-        <div class="container">
-        {% include "base/alert.html" %}
+        <div class="page-header page-header-small">
+          <div class="page-header-image" data-parallax="true" style="background-image: url('../assets/img/bg6.jpg');">
+          </div>
+          <div class="content-center">
+            <div class="container">
+              <h1 class="title">{% block headertitle %}{% endblock %}</h1>
 
-          <ol class="breadcrumb my-4">
-            {% block breadcrumb %}
-            {% endblock %}
-          </ol>
-          {% block content %}
-          {% endblock %}
+            </div>
+          </div>
         </div>
-        <div class="push"></div>
-      </div>
+        <div class="section section-about-us">
 
-    {% endblock body %}
+          <div class="container">
+          {% include "base/alert.html" %}
+
+            <ol class="breadcrumb my-4">
+              {% block breadcrumb %}
+              {% endblock %}
+            </ol>
+            {% block content %}
+            {% endblock %}
+          </div>
+          <div class="push"></div>
+        </div>
+      </div>
 
     {% block javascript %}{% endblock %}
     {% include "base/js.html" %}
-  
+
   </body>
 </html>
