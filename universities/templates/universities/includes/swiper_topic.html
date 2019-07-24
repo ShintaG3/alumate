@@ -35,7 +35,7 @@
     <div class="swiper-slide"">
       <div class="card text-center" style="width: 20rem;">
         <div class="card-body pt-15">
-          <img style="max-width:100px;" src="{{ post.created_by.profile.first.img.url }}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+          <img style="max-width:100px;" src="{{ post.created_by.profile.first.get_img_url }}" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
           <h4 class="title mt-0">{{ post.created_by }}</h4>
           <p class="category text-primary">{{ post.created_by.university.first.enr_status }}</p>
           <p class="description">{{ post.get_message_as_markdown |truncatewords:12 }}</p>

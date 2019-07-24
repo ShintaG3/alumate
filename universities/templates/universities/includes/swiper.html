@@ -6,7 +6,7 @@
   <div class="swiper-container">
     <div class="swiper-wrapper">
       {% for uni in qs %}
-      <div class="swiper-slide" style="background-image:url({{ uni.user.profile.first.img.url }})"></div>
+      <div class="swiper-slide" style="background-image:url({{ uni.user.profile.first.get_img_url }})"></div>
 
       {% endfor %}
     </div>
