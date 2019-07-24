@@ -9,17 +9,15 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-6 col-md-8 col-sm-10">
-      {% if profile.img %}
         <div class="col my-5">
-          <img src="{{ profile.img.url }}" class="rounded img-raised" style="width:200px"/>
+          <img src="{{ profile.get_img_url }}" class="rounded img-raised" style="width:200px"/>
+          {% if profile.img %}
+            <form class="form-group" action="{% url 'delete_img' %}" method="post">
+              {% csrf_token %}
+              <input class="btn btn-primary" type="submit" value="Delete image">
+            </form>
+          {% endif %}
         </div>
-      {% else %}
-        <div class="col my-5">
-          <h4>Upload image!</h4>
-        </div>
-
-      {% endif %}
-
       <form method="post" novalidate enctype='multipart/form-data'>
         {% csrf_token %}
         {% include 'my_profiles/includes/form-profile.html' %}
