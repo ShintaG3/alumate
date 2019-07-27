@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'my_universities',
     'my_profiles',
     'universities',
+    'index',
     'charts',
     'storages',
 ]
@@ -116,7 +117,7 @@ USE_TZ = True
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'index'
 
 
 #--staticfile configuration--

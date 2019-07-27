@@ -1,0 +1,279 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Alumate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  {% include "base/css.html" %}
+  {% include "index/base/css.html" %}
+
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .page-header {
+      min-height: 700px;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      padding: 0;
+    }
+    .swiper-slide {
+      height: 100%;
+      overflow: hidden;
+      width:100%;
+      text-align: center;
+      font-size: 18px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide .img-responsive {
+      width:100%;
+      min-height: 700px;
+      object-fit: cover;
+    }
+    .caption-container {
+      text-align: left;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    .caption-box {
+      display: block;
+      position: relative;
+      width: 60%;
+      text-align:left;
+      opacity: .8;
+      font-family:'Rubik', sans-serif;
+      font-weight:700;
+      font-size:calc(20px + 3vw);
+      text-transform: none;
+      margin-top: 110px;
+    }
+    .keymessage-container {
+      text-align: left;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    .keymessage-box {
+      display: block;
+      position: relative;
+      text-align:left;
+      opacity: .8;
+      margin: auto 10% auto auto;
+      width: 30%;
+    }
+    .keymessage-h1 {
+      font-family:'Lato', sans-serif;
+      font-weight:600;
+      font-size:calc(24px + 2vw) ;
+    }
+    .keymessage-h2 {
+      font-family:'Lato', sans-serif;
+      font-weight:400;
+      font-size:calc(16px + 1.8vw) ;
+    }
+  </style>
+</head>
+
+<body class="landing-page sidebar-collapse">
+  {% include 'index/base/navbar.html'%}
+  <div class="page-header">
+
+    <!-- picture-swiper -->
+    <div class="swiper-container header-swiper-back-1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img class="img-responsive" src="{% get_media_prefix %}university_img/uni7.jpg" style="filter:brightness(75%);">
+        </div>
+        <div class="swiper-slide">
+            <img class="img-responsive" src="{% get_media_prefix %}university_img/uni6.jpg" style="filter:brightness(75%);">
+        </div>
+        <div class="swiper-slide">
+            <img class="img-responsive" src="{% get_media_prefix %}university_img/uni3.jpg" style="filter:brightness(75%);">
+        </div>
+        <div class="swiper-slide">
+            <img class="img-responsive" src="{% get_media_prefix %}board_img/uni4.jpg" style="filter:brightness(75%);">
+        </div>
+        <div class="swiper-slide">
+            <img class="img-responsive" src="{% get_media_prefix %}board_img/uni8.jpg" style="filter:brightness(75%);">
+        </div>
+        <div class="swiper-slide">
+            <img class="img-responsive" src="{% get_media_prefix %}board_img/uni2.jpg" style="filter:brightness(75%);">
+        </div>
+      </div>
+    </div>
+    <!-- text-swiper -->
+    <div class="swiper-container header-swiper-front">
+      <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="keymessage-container">
+            <div class="keymessage-box">
+              <div class="keymessage-h1">
+                FIND AND CONNECT
+              </div>
+              <div class="keymessage-h2">
+                Tutors and Mentors <br>are you Light house.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keymessage-container">
+            <div class="keymessage-box">
+              <div class="keymessage-h1">
+                LEARN AND SHARE
+              </div>
+              <div class="keymessage-h2">
+                Driven by the Real and Latest Information.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keymessage-container">
+            <div class="keymessage-box">
+              <div class="keymessage-h1">
+                UTILIZE WIZELY
+              </div>
+              <div class="keymessage-h2">
+                P2P Collective Intelligence.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keymessage-container">
+            <div class="keymessage-box">
+              <div class="keymessage-h1">
+                PLAN AND PREPARE
+              </div>
+              <div class="keymessage-h2">
+                Milestone makes dreams come true.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keymessage-container">
+            <div class="keymessage-box">
+              <div class="keymessage-h1">
+                SUCCEED IN STUDY ABROAD!
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="keymessage-container">
+            <div class="keymessage-box">
+              <div class="keymessage-h1">
+                SHARE EXPERIENCE
+              </div>
+              <div class="keymessage-h2">
+                Your Experience is Mightier than the Sword.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+    <!-- caption-swiper-fixed -->
+    <div class="swiper-container" style="margin-left: 10%; width:80%;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="caption-container">
+            <div class="caption-box">
+              <span style="color:#F96332;">Study </span> abroad
+              <br> the
+              <span style="color:#F96332;">Key
+              </span> <br>to<span style="color:#F96332;"> Success</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <!-- lead to each page here -->
+  </div>
+  <!-- Swiper JS -->
+  {% include "base/js.html" %}
+  {% include "index/base/js.html" %}
+  <!-- Initialize Swiper -->
+  <script>
+  var swiperBack1 = new Swiper('.header-swiper-back-1', {
+    direction: 'vertical',
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop:true,
+    speed: 300,
+
+  });
+  var swiperFront = new Swiper('.header-swiper-front', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop:true,
+    speed: 400,
+    pagination: {
+        el: '.header-swiper-front .swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.header-swiper-front .swiper-button-next',
+        prevEl: '.header-swiper-front .swiper-button-prev',
+    },
+    controller: {
+        control: [swiperBack1],
+        by: 'container',
+    },
+    keyboard: true,
+    a11y: true,
+    loop: true,
+    autoplay: {
+       delay: 5000,
+       disableOnInteraction: false,
+     },
+  });
+  </script>
+</body>
+</html>
