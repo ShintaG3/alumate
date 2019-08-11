@@ -6,6 +6,7 @@ User = settings.AUTH_USER_MODEL
 
 class MyProfile(models.Model):
     user                = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name="profile")
+    country             = models.CharField(max_length=100, null=True, blank=True)
     img                 = models.ImageField(upload_to='profile_image', null=True,blank=True)
     introduction        = models.CharField(max_length=500,null=True,blank=True)
     current_occupation  = models.CharField(max_length=500,null=True,blank=True)

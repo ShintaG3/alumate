@@ -3,6 +3,17 @@ from .models import MyProfile
 
 class MyProfileForm(forms.ModelForm):
     img = forms.ImageField(label='Image')
+    country = forms.CharField(
+                        required=False,
+                        label='Country of Origin',
+                        widget=forms.TextInput(
+                                attrs={
+                                    "class":"form-control",
+                                    "id":"country_name"
+
+                                }
+                            )
+                        )
     introduction = forms.CharField(
                         required=False,
                         widget=forms.Textarea(
@@ -15,6 +26,7 @@ class MyProfileForm(forms.ModelForm):
                         )
     current_occupation = forms.CharField(
                         required=False,
+                        label='Current Occupation',
                         widget=forms.TextInput(
                                 attrs={
                                     "class":"form-control"
@@ -33,10 +45,4 @@ class MyProfileForm(forms.ModelForm):
                         )
     class Meta:
         model = MyProfile
-        fields = ('img','introduction','current_occupation','tags')
-        labels = {
-            'img':'Image',
-            'introduction':'Introduction',
-            'current_occupation':'Current Occupation',
-            'tags':'Tags',
-        }
+        fields = ('img','country','introduction','current_occupation','tags')
